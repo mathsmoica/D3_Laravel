@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Stage de Première Année</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"> <!-- Lien vers votre fichier CSS -->
+
+
+    <!-- il suffit d'insérer la feuille de style et le script js comme d'habitude mais en utilisant la fonction asset -->
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
+
+
+
+    <!-- dans la vue -->
+    <!-- il est possible d'activer la bibliothèque Font Awesome qui est une bibliothèque d'icônes. -->
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/all.min.css') }}" rel="stylesheet">
+
+
+
+     <!-- il est possible d'activer la bibliothèque JQuery. -->
+     <script src="{{ asset('/js/jquery.min.js') }}"></script>
 </head>
 
 <body>
@@ -15,7 +32,7 @@
                 <ul class="flex space-x-4">
                     <li>
                         <a href="http://localhost:8080/D3/laravel/Portfolio_Eustache/public/" class="text-blue-500 hover:underline">Retour à l'Accueil</a>
-                </li>
+                    </li>
                 </ul>
             </nav>
         </header>
