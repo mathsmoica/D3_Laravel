@@ -446,20 +446,7 @@
                         </div>
                     </div>
 
-                    <div class="ml-12">
-                        <h1 class="text-xl font-bold">Mon Stage de Première Année</h1>
-                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            <p>Durant mon stage de première année, j'ai eu l'opportunité de travailler sur plusieurs projets intéressants. J'ai acquis de nouvelles compétences en développement web, en particulier avec le framework Laravel.</p>
-                            <p>Voici quelques-unes des tâches que j'ai réalisées :</p>
-                            <ul>
-                                <li>Analyse des bases de données existantes et mise à jour de la liste des rectifications à effectuer sur les bases de données.</li>
-                                <li>Communication avec les collectivités, propositions de solutions et mise en œuvre des rectifications.</li>
-                                <li>Formations individuelles du personnel pour l'utilisation de solutions de sécurité (VPN) applicatifs.</li>
-                                <li>Recensement de matériels avec l'aide des SISR sur une base de données ainsi que l'outil DCAM.</li>
-                            </ul>
-                            <p>Ce stage m'a permis de mieux comprendre le monde professionnel et d'appliquer mes connaissances théoriques dans un contexte réel.</p>
-                        </div>
-                    </div>
+
 
                     <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
                         <div class="flex items-center">
@@ -527,6 +514,13 @@
                         <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
                             Sponsor
                         </a>
+
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
+                         
+                        </svg>
+                        
+                            <a href="{{ route('stage1') }}" class="text-blue-500 hover:underline">      En savoir plus sur mon stage</a>
+                        
                     </div>
                 </div>
 

@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
+
 Route::get('/stage', function () {
     return view('stage');
 });
+
+
+Route::get('/stage1', function () {
+    return view('stage1');
+})->name('stage1');
