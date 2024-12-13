@@ -26,3 +26,8 @@ Route::get('/stage', function () {
 });
 */
 Route::get('/stage1', 'PortfolioController@stage1')->name('stage1');
+
+
+
+
+Route::resource('mesCompetences','CompetenceController');

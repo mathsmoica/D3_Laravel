@@ -13,9 +13,13 @@ class CompetenceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+{
+   //équivalent à "select * from competences"
+   $resultats = Competence::all();
+                               
+   //demande d'affichage de la page "mesCOmpetences"
+   return view('mesCompetences', ["listeCompt" => $resultats]);
+}
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +28,7 @@ class CompetenceController extends Controller
      */
     public function create()
     {
-        //
+        return view('form_nouvelle_competence');
     }
 
     /**
@@ -35,7 +39,21 @@ class CompetenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //tous les champs sont obligatoires
+        $this->validate($request, ['code'=>'required']);
+        $this->validate($request, ['intitule'=>'required']);
+
+        //création de l'objet
+        $comp = new competence();
+        //initialisation de ses attributs avec les valeurs du formulaire
+        $comp->code=$request->input('code');
+        $comp->intitule=$request->input('intitule');
+
+        //enregistrement effectif dans la base de données
+        $comp->save();
+
+        //affichage de la vue "mesCompetences"
+        return redirect('/mesCompetences');
     }
 
     /**
