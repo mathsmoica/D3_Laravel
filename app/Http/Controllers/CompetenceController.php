@@ -77,10 +77,15 @@ class CompetenceController extends Controller
      * @param  \App\Models\Competence  $competence
      * @return \Illuminate\Http\Response
      */
-    public function edit(Competence $competence)
-    {
-        //
-    }
+
+     public function edit($idCompetence)
+     {
+         //équivalent à "select * from competences where id=idCompetence"
+         $res = competence::find($idCompetence);
+ 
+         //demande d'affichage de la vue "modifier_competence"
+         return view('modifier_competence', ["competence_selectionne" => $res]);
+     }
 
     /**
      * Update the specified resource in storage.
@@ -89,10 +94,26 @@ class CompetenceController extends Controller
      * @param  \App\Models\Competence  $competence
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Competence $competence)
-    {
-        //
-    }
+    
+     public function update(Request $request, $idCompetence)
+     {
+            //tous les champs sont obligatoires
+            $this->validate($request, ['code'=>'required']);
+            $this->validate($request, ['intitule'=>'required']);
+    
+            //création de l'objet
+            $comp =competence::find($idCompetence);
+ 
+            //initialisation de ses attributs avec les valeurs du formulaire
+            $comp->code=$request->code;
+            $comp->intitule=$request->intitule;
+    
+            //enregistrement effectif dans la base de données
+            $comp->save();
+    
+            //affichage de la vue "mesCompetences"
+            return redirect('/mesCompetences');
+     }
 
     /**
      * Remove the specified resource from storage.
