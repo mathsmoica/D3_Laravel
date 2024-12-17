@@ -121,8 +121,29 @@ class CompetenceController extends Controller
      * @param  \App\Models\Competence  $competence
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Competence $competence)
+
+     public function destroy($idCompetence)
+     {
+         //création de l'objet
+         $comp = competence::find($idCompetence);
+         //suppression de l'enregistrement dans la BDD
+         $comp->delete();
+ 
+         //affichage de la vue "mesCompetences"
+         return redirect('/mesCompetences');
+     }
+
+
+    public function confirmation($idCompetence)
     {
-        //
+        //création de l'objet
+        $comp = competence::find($idCompetence);
+
+         //demande d'affichage de la vue "voir_details_competence"
+         return view('voir_demande_confirmation_suppression', ["competence_selectionne" => $comp]);
     }
+     
+
+
+
 }

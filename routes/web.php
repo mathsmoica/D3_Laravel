@@ -33,4 +33,4 @@ Route::get('/stage1', 'PortfolioController@stage1')->name('stage1');
 Route::resource('mesCompetences','CompetenceController');
 
 
-
+Route::get('/mesCompetences/confirmation-supp-comp/{idCompetence}','CompetenceController@confirmation')->name('confirmation_suppression_competence');
