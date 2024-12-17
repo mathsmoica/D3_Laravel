@@ -62,9 +62,13 @@ class CompetenceController extends Controller
      * @param  \App\Models\Competence  $competence
      * @return \Illuminate\Http\Response
      */
-    public function show(Competence $competence)
+      public function show($idCompetence)
     {
-        //
+         //équivalent à "select * from competences where id=idCompetence"
+         $res = competence::find($idCompetence);
+
+         //demande d'affichage de la vue "voir_details_competence"
+         return view('voir_details_competence', ["competence_selectionne" => $res]);
     }
 
     /**
